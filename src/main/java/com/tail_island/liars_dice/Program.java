@@ -65,13 +65,16 @@ class HardHead {
 
   public void execute() {
     try {
-      boolean isTerminated = false;
-
       BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
       ObjectMapper objectMapper = new ObjectMapper();
 
-      while (!isTerminated) {
-        String commandString   = reader.readLine();
+      while (true) {
+        String commandString = reader.readLine();
+
+        if (commandString == null) {
+          break;
+        }
+
         String parameterString = reader.readLine();
 
         switch (commandString) {
@@ -96,9 +99,7 @@ class HardHead {
           break;
 
         default:
-          isTerminated = true;
-          System.out.println("OK");
-
+          System.err.println(String.format("invalid command: %s", commandString));
           break;
         }
       }
