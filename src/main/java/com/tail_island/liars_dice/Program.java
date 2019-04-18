@@ -23,7 +23,6 @@ class HardHead {
   //   ;
   // }
 
-
   public Action action(Game game) {
     // ログ出力。標準出力は通信で使うので、ログ出力したい場合はSystem.err.printlnを使用してください。
     System.err.println("action() started.");
